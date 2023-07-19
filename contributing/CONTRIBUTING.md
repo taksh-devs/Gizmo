@@ -12,9 +12,9 @@ To get an overview of the project, please read [README.md](https://github.com/ta
 If you are new to Game-Boy Emulation, we suggest checking these [resources](https://github.com/taksh-devs/Gizmo/blob/main/contributing/resources.md).
 
 ### How to become a contributor
-This project is being developed and maintained by Taksh, a community of like-minded people interest in tech. Taksh is a sub-community of Khoj which has several projects under it.
+This project is being developed and maintained by Taksh, a community of like-minded people interested in tech. Taksh is a sub-community of Khoj which has several projects under it.
 
-If you wish to contribute to this project, join the Taksh!
+If you wish to contribute to this project, join Taksh!
 
 ### Overview of the Ticketing System
 We rely on a simple ticketing system for completing tasks. Tickets are created as per requirement and contributors have to assign themselves to those they wish to work on.
