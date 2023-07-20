@@ -4,6 +4,9 @@
 #include <GLFW/glfw3.h>
 #include <spdlog/spdlog.h>
 
+#include "logger.h"
+#include "cpu.h"
+
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
   glViewport(0, 0, width, height);
 }
@@ -14,7 +17,7 @@ void processInput(GLFWwindow *window) {
 }
 
 int main() {
-  spdlog::info("Creating a simple window");
+  INFO("Creating a simple window");
 
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -23,14 +26,14 @@ int main() {
 
   GLFWwindow* window = glfwCreateWindow(800, 600, "Gizmo", NULL, NULL);
   if (window == NULL) {
-    spdlog::error("Failed to create GLFW window");
+    ERROR("Failed to create GLFW window");
     glfwTerminate();
     return -1;
   }
   glfwMakeContextCurrent(window);
 
   if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-    std::cout << "Failed to initialize GLAD" << std::endl;
+    ERROR("Failed to initialize GLAD");
     return -1;
   }
 

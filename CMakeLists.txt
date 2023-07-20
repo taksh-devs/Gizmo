@@ -1,12 +1,12 @@
 cmake_minimum_required(VERSION 3.20)
-project(Gizmo)
+project(gizmo)
 
 set(SOURCE_FILES src/main.cpp)
-add_executable(Gizmo ${SOURCE_FILES})
+add_executable(gizmo ${SOURCE_FILES})
 
 # Add glad
 add_subdirectory(lib/glad)
-target_link_libraries(Gizmo glad)
+target_link_libraries(gizmo glad)
 include_directories(lib/glad/include)
 
 # Add glfw
@@ -18,8 +18,8 @@ add_subdirectory(lib/glfw)
 include_directories(lib/glfw)
 include_directories(lib/glfw/include)
 
-target_link_libraries(Gizmo glfw ${GLFW_LIBRARIES})
+target_link_libraries(gizmo glfw ${GLFW_LIBRARIES})
 
 # Add spdlog
 add_subdirectory(lib/spdlog)
-target_link_libraries(Gizmo spdlog::spdlog)
+target_link_libraries(gizmo spdlog::spdlog)
