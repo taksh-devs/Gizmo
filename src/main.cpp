@@ -3,6 +3,7 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <spdlog/spdlog.h>
+#include "osdialog.h"
 
 #include "logger.h"
 #include "cpu.h"
@@ -18,6 +19,11 @@ void processInput(GLFWwindow *window) {
 
 int main() {
   INFO("Creating a simple window");
+
+  char* filename = osdialog_file(OSDIALOG_OPEN_DIR, NULL, NULL, NULL);
+  if (filename) {
+    INFO(filename);
+  }
 
   glfwInit();
   glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);

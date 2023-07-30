@@ -23,3 +23,8 @@ target_link_libraries(gizmo glfw ${GLFW_LIBRARIES})
 # Add spdlog
 add_subdirectory(lib/spdlog)
 target_link_libraries(gizmo spdlog::spdlog)
+
+# Add osdialog
+add_subdirectory(lib/osdialog)
+target_link_libraries(gizmo osdialog)
+include_directories(lib/osdialog/src)

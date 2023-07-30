@@ -13,7 +13,7 @@ class Registers {
     u_int8_t l = 0;
 
     u_int16_t sp = 0xFFFE;
-    u_int16_t pc = 0x000;
+    u_int16_t pc = 0x0100;
 
     u_int16_t af() {
       return (a << 8) | f;
