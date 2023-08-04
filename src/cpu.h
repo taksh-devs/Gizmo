@@ -1,4 +1,7 @@
 
+#ifndef CPU_H
+#define CPU_H
+
 #include "registers.h"
 #include "clock.h"
 
@@ -7,3 +10,5 @@ class CPU {
     Clock clock;
     Registers registers;
 };
+
+#endif

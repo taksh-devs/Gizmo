@@ -1,4 +1,7 @@
 
+#ifndef REGISTERS_H
+#define REGISTERS_H
+
 #include <cstdlib>
 
 class Registers {
@@ -52,3 +55,5 @@ class Registers {
     }
 
 };
+
+#endif
