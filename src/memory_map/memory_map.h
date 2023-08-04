@@ -4,7 +4,7 @@
 
 #include <cstdlib>
 #include "../utils.h"
-#include "../logger.h
+#include "../logger.h"
 #include "../display/display.h"
 
 const u_int64_t INTERNAL_RAM0 = 8 * 1024; // 8kB Internal RAM
