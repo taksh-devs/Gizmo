@@ -1,12 +1,5 @@
-
-#include <glad/glad.h>
-#include <GLFW/glfw3.h>
-
 #include "logger.h"
 #include "common.h"
-#include "events/window_events.h"
-#include "events/input_events.h"
-#include "renderer/renderer.h"
 
 int main() {
   INFO("Starting Gizmo");
