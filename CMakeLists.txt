@@ -37,3 +37,6 @@ target_link_libraries(gizmo spdlog::spdlog)
 # Add ImGUI
 include_directories(lib/imgui)
 include_directories(lib/imgui/backends)
+
+# Add SDL
+include_directories(lib/sdl)
