@@ -2,8 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 project(gizmo)
 
 set(SOURCE_FILES
-    src/sdltest.cpp
-    #src/main.cpp
+    src/main.cpp
     src/utils.cpp
     src/common.cpp
     src/display/display.cpp
@@ -20,4 +19,4 @@ target_link_libraries(gizmo spdlog::spdlog)
 # Add SDL
 add_subdirectory(lib/sdl)
 include_directories(lib/sdl/include/SDL3)
-target_link_libraries(gizmo sdl)
+target_link_libraries(gizmo SDL3::SDL3)

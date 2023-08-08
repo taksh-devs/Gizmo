@@ -1,41 +1,39 @@
+
+#include <SDL.h>
+
 #include "logger.h"
 #include "common.h"
 
 int main() {
   INFO("Starting Gizmo");
 
-  glfwInit();
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-  glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-  glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+  if (SDL_Init(SDL_INIT_VIDEO) != 0) {
+    ERROR(SDL_GetError());
+    return -1;
+  }
 
-  GLFWwindow* window = glfwCreateWindow(gizmoState->size.x, gizmoState->size.y, gizmoState->title.c_str(), NULL, NULL);
+  SDL_Window* window = SDL_CreateWindow(gizmoState->title.c_str(), gizmoState->size.x, gizmoState->size.y, 0);
   if (window == NULL) {
-    ERROR("Failed to create GLFW window");
-    glfwTerminate();
+    ERROR(SDL_GetError());
     return -1;
   }
 
-  glfwMakeContextCurrent(window);
-
-  if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
-    ERROR("Failed to initialize GLAD");
+  SDL_Renderer* renderer = SDL_CreateRenderer(window, "", SDL_RENDERER_ACCELERATED); // ERROR here: "Couldn't find matching render driver"
+  if (renderer == NULL) {
+    ERROR(SDL_GetError());
     return -1;
   }
 
-  glViewport(0, 0, gizmoState->size.x, gizmoState->size.y);
-  glfwSetFramebufferSizeCallback(window, processWindowResize);
+  SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255);
+  SDL_RenderClear(renderer);
+  SDL_RenderPresent(renderer);
 
-  while(!glfwWindowShouldClose(window)) {
-    processInput(window);
+  SDL_Delay(15000); // Wait for 2 seconds
 
-    draw(window);
+  SDL_DestroyRenderer(renderer);
+  SDL_DestroyWindow(window);
+  SDL_Quit();
 
-    glfwSwapBuffers(window);
-    glfwPollEvents();
-  }
-
-  glfwTerminate();
   delete gizmoState;
   return 0;
 }

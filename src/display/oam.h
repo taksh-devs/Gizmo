@@ -11,14 +11,7 @@ class OAM {
   private:
     u_int8_t byts[OAM_LENGTH] = { 0 };
   public:
-    u_int8_t& operator[](int index) {
-      if (index >= OAM_LENGTH) {
-        ERROR("Object-Attribute Memory index out of bounds");
-        exit(-1);
-      }
-
-      return byts[index];
-    }
+    u_int8_t& operator[](int index);
 };
 
 #endif

@@ -11,14 +11,7 @@ class VirtRAM {
   private:
     u_int8_t byts[VIRT_RAM_LENGTH] = { 0 };
   public:
-    u_int8_t& operator[](int index) {
-      if (index >= VIRT_RAM_LENGTH) {
-        ERROR("Virtual RAM index out of bounds");
-        exit(-1);
-      }
-
-      return byts[index];
-    }
+    u_int8_t& operator[](int index);
 };
 
 #endif
